@@ -105,7 +105,7 @@ a{
 }
 
 
-.officialLINE{
+.official-LINE{
   margin-top: 10px;
   justify-content: center;    /*横並びにしか発動しないから不要*/
   margin: 0 auto;             /*ブロックのみに発動、widthが必要*/
