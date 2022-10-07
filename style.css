@@ -1,0 +1,232 @@
+.headerInner{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.globalNav{
+  justify-content: space-around;
+  width: 380px;
+}
+
+.globalNav ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+a{
+  text-decoration: none;
+}
+
+.KeyVisual{
+  position: relative;
+  display: flex;             
+  width: 100%;
+   justify-content: flex-end; /* 要素を右寄せする */
+}
+
+.key-pic{
+  /* margin-left: auto; */
+  height: 510px;
+  /* width: 976px; */
+  overflow: hidden;           /*先にdivの広さを設定して、*/
+}
+
+.key-pic img{
+  width: 100%;
+  height: 100%;               /*次にimgの幅、高さを100%にする*/
+  border-radius: 100px 0px 0px 100px;
+}
+
+.slogan{
+  
+  width: 500px; 
+  height: 281px;
+  text-align: center;
+  align-items: center;
+  background-color: whitesmoke;
+  /* border: 2px solid black; */
+  border-radius: 30px;
+  position: absolute;
+  /* right: 50%; */
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);    /*中央寄せの方法の一つ*/
+
+}
+
+.katagaki{
+  color: #0071BC;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.meigen{
+  font-weight: 700;
+  font-size: 60px;
+}
+
+.aboutPOSSE{
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.towa{
+  font-size: 40px;
+}
+
+.towa-eng{
+  color: blue;
+}
+
+.setumei{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.setumei-pic{
+  width: 472px;
+}
+
+.setumei-pic img{
+  width: 100%;
+  border-radius: 15px;
+}
+
+.setumeibunn{
+  width: 472px;
+  height: 300px;
+  /* background-color: beige; */
+  font-size: px;
+}
+
+
+.official-LINE{
+  margin-top: 10px;
+  justify-content: center;    /*横並びにしか発動しないから不要*/
+  margin: 0 auto;             /*ブロックのみに発動、widthが必要*/
+  text-align: center;
+  /* background-color: blue; */
+  display: block;
+  position: relative;
+  /* background: linear-gradient(rgba(0, 113, 188,.8),rgba(0, 113, 188,.8)), url(bg-line.jpg) ;  */
+  /* border-radius: 100px;       divの裏にimg載せる方法、色の指定方法は何個かある、透明度もいける */
+  width: 1000px;
+  height: 357px ;
+}
+
+/* .people{
+  margin: 0 auto;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+} */
+
+.LINE-content{
+  /* top: 0; */
+  /* position: absolute; */
+  height: 100%;
+  width: 100%;                /*width指定しただけで何故真ん中に来るんだ？*/
+  color: white;
+  border-radius: 100px;
+  background: linear-gradient(rgba(0, 113, 188,.9),rgba(0, 113, 188,.9)), url(top/bg-line.jpg) ; 
+  background-size: contain;   /*containすると勝手に縮小してくれる */
+  /* background-image: url(bg-line.jpg); */
+}
+
+.titleyoko{
+  display: flex;
+  /* padding-left: 170px; */
+  justify-content: center;
+  align-items: center;        /*縦の中央揃え*/
+  margin-top: 68px;
+}
+
+.LINE-icon{
+  width: 4%;
+}
+
+.line-title{
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.line-text{
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.botton{
+  width: 320px;
+  height: 50px;
+  background-color: white;
+  margin: 0 auto;             /*divにwidth指定すれば、これが使える*/ 
+  display: flex;
+  align-items: center;        /*align-itemsもjustify-contentもFlexboxが必要*/
+  justify-content: center;
+  position: relative;
+}
+
+.click-button{
+  width: 320px;
+}
+
+.botton-img{
+  position: absolute;
+  right: 5%;                  /*relativeとabsolute用いれば、細かく位置調整出来る*/
+}
+
+/* .botton-text{
+  text-align: right;
+  position: absolute;
+} */                             /*文字は、親要素で中央ぞろえにした*/
+
+.footerInner{
+  text-align: center;
+  
+}
+
+.up{
+  height: 270px;
+  border-bottom: 1px solid #EEEEEE;
+  position: relative;
+}
+
+.up-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.yazirusi{
+  display: flex;
+  justify-content: center;
+}
+
+.yazirusi p{
+  margin: 0;
+}
+
+.SNS{
+  display: flex;
+  /* width: 30%; */
+  justify-content: center;
+  /* justify-content: space-between; */
+  border-radius: 50%;
+  border-width: 5px;
+}
+
+.sns-icon{
+  margin: 0,4px;
+}
+
+.down{
+  height: 80px;
+
+}
