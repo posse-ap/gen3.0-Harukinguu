@@ -1,6 +1,8 @@
 # gen3.0-Harukinguu
 
-①sqlファイルを作った。
+<やったこと＞  
+①sqlファイルを作った。  
+②pdoファイルを作った。  
 
-＜初めて知ったこと＞
+＜初めて知ったこと＞  
 ・ymlファイルがあればdocker立てられるわけではない。nginxやDockerfileが必要？
