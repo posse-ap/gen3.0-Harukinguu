@@ -1,3 +1,6 @@
 # gen3.0-Harukinguu
 
-#ph2のwebapp課題
+①sqlファイルを作った。
+
+＜初めて知ったこと＞
+・ymlファイルがあればdocker立てられるわけではない。nginxやDockerfileが必要？
