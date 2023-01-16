@@ -1,0 +1,151 @@
+<?php
+
+declare(strict_types = 1);
+
+//PDOの設定を呼び出す
+require('./pdo.php');
+
+//今日の学習時間
+$today_stmt=$pdo->query('SELECT study_time FROM records WHERE study_date= CURDATE()');
+//curdateが上手く関数として認識されていないのが不安
+$today=$today_stmt->fetch();
+
+//今月の学習時間
+$month_stmt=$pdo->query('SELECT SUM(study_time) FROM records');
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webapp</title>
+  <link rel="stylesheet" href="top.css">
+</head>
+<body>
+  <header>
+    <div class="headerInner">
+      <div class="header_left">
+        <div class="logo"><img src="./img/logo.svg" alt=""></div>
+        <p class="header_week">4th week</p>
+      </div>
+      <div class="header_right">
+        <div class="openbtn" id="open">記録・投稿</div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main">
+      <div class="main_left">
+        <div class="counter">
+          <div class="counter_box">
+            <p class="p1">Today</p>
+            <p class="p2">3</p>
+            <p class="p3">hour</p>
+          </div>
+          <div class="counter_box">
+            <p class="p1">Month</p>
+            <p class="p2">120</p>
+            <p class="p3">hour</p>
+          </div>
+          <div class="counter_box">
+            <p class="p1">Total</p>
+            <p class="p2">1348</p>
+            <p class="p3">hour</p>
+          </div>
+        </div>
+        <div class="main_left_bargraph">
+          <canvas id="myChart1"></canvas>
+        </div>
+      </div>
+      <div class="main_right">
+        <div class="main_right_box">
+          <div class="main_right_title">学習言語</div>
+          <div class="main_right_graph1">
+            <canvas id="myChart2"></canvas>
+          </div>
+        </div>
+        <div class="main_right_box">
+          <div class="main_right_title">学習コンテンツ</div>
+          <div class="main_right_graph2">
+            <canvas id="myChart3"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer_p1">＜</div>
+    <div class="footer_p2">2020年10月</div>
+    <div class="footer_p3">＞</div>
+  </footer>
+  <div class="header_right">
+    <div class="openbtn2" id="open2">記録・投稿</div>
+  </div>
+
+  <div id="mask" class="hidden"></div>
+  <section id="modal" class="hidden">
+    <div id="close">×</div>
+    <div class="modal_main">
+      <div class="modal_left">
+        <div class="modal_date">
+          <p>学習日</p>
+          <input type="date" name="">
+        </div>
+        <div class="modal_content">
+          <p>学習コンテンツ</p>
+          <input type="checkbox" name="content" >N予備校
+          <input type="checkbox" name="content" >ドットインストール
+          <input type="checkbox" name="content" >POSSE課題
+        </div>
+        <div class="modal_language">
+          <p>学習言語</p>
+          <input type="checkbox" name="language" >HTML
+          <input type="checkbox" name="language" >CSS
+          <input type="checkbox" name="language" >JavaScript
+          <input type="checkbox" name="language" >PHP
+          <input type="checkbox" name="language" >Laravel
+          <input type="checkbox" name="language" >SQL
+          <input type="checkbox" name="language" >SHELL
+          <input type="checkbox" name="language" >情報システム基礎知識
+        </div>
+      </div>
+      <div class="modal_right">
+        <div class="modal_time">
+          <p>学習時間</p>
+          <input type="text" name="">
+        </div>
+        <div class="modal_twitter">
+          <p>Twitter用コメント</p>
+          <textarea id="twitterContent" name="" cols="50" rows="10"></textarea><br>
+          <input id="share" type="checkbox" name="Twitter" >Twitterにシェアする
+        </div>
+      </div>
+    </div>
+    <div class="openbtn3" id="record">記録・投稿</div>
+  </section>
+  <div id="modal2" class="loading hidden">
+    <div id="close2">×</div>
+    <span class="circle"></span>
+  </div>
+  <div id="modal3" class="finished hidden">
+    <div id="close3">×</div>
+    <div class="modal3_content">
+      <div class="finished_title">Awesome!</div>
+      <div class="finished_circle"><div class="finished_check"></div></div>
+      <div class="finished_text">
+        <p>記録・投稿</p>
+        <p>完了しました</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script src="top.js"></script>
+</body>
+</html>
