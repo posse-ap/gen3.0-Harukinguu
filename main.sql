@@ -15,7 +15,7 @@ CREATE TABLE records (
 );
 
 INSERT INTO records(study_date,study_time,language_id,content_id)
-VALUES
+VALUES    --下のは、全部ダミーデータ
 ('2022-9-1',2,1,1),
 ('2022-9-2',2,1,1),
 ('2022-9-3',2,1,1),
