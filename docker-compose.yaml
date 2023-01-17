@@ -36,3 +36,10 @@ services:
       - ./docker/mysql:/docker-entrypoint-initdb.d
 volumes:
   mysql-data:
+
+#dockerの柱は、イメージとコンテナ
+#アプリコードとdockerfileがイメージの雛形、そのイメージからコンテナを作成
+#httpリクエストを受け取って、返してあげるアプリケーションのことをwebサーバーという
+#アプリコード、ライブラリ、ベースイメージをまとめてdockerfileという。それをもとにイメージを作成
+#
+#
